@@ -9,5 +9,5 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # --- better ls ---
-alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --all --git-ignore"
-alias tree="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree --all --git-ignore"
+alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --git-ignore --no-filesize"
+alias tree="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree --git-ignore --no-filesize"
