@@ -1,0 +1,55 @@
+[user]
+  name = Ankur Sharma
+  email = {{ .email | quote }}
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  side-by-side = true
+[merge]
+  conflictStyle = diff3
+[diff]
+  colorMoved = default
+[fetch]
+  prune = true
+[pager]
+  color = true
+[status]
+  color = true
+[alias]
+  this  = !git init && git add . && git commit -m \"initial commit\"
+  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+  edit  = !$EDITOR $(git ls-files -m)
+
+  b = branch
+  ba = branch --all
+  bd = branch --delete
+
+  cm = commit
+  ci = commit -a
+
+  cp = cherry-pick -e
+  co = checkout
+
+  st = status -sb
+
+  di = diff --minimal
+  ds = diff --minimal --staged
+  dl = diff --minimal HEAD^ HEAD
+
+  lg = log --graph
+  lp = log --patch
+  ls = log --pretty=format:"%C(yellow)%h%x09%C(green)%cr%x09%C(reset)%s\\%C(magenta)%d\\ %C(blue)[%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%x09%C(green)%cd%x09%C(reset)%s\\%C(magenta)%d\\ %C(blue)[%cn]" --decorate --numstat
+  unstage = reset HEAD
+  undo-commit = reset --soft HEAD^
+[push]
+  default = current
+[rere]
+  enabled = true
+[color]
+    ui = auto
+[pull]
+	rebase = false
