@@ -2,18 +2,20 @@
 
 INSTALL_HOMEBREW=${INSTALL_HOMEBREW:-0}
 
-mkdir -p $HOME/.local/bin
+HOME_BIN=$HOME/.local/bin
+rm -rf $HOME_BIN
+mkdir -p $HOME_BIN
 
 if [[ $(uname) == "Darwin" ]]; then
 	if [[ $INSTALL_HOMEBREW -eq 1 ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 
-	brew install zsh neovim ripgrep
+	brew install zsh neovim ripgrep zoxide
 fi
 
 # Install chezmoi
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME_BIN
 
 # Install latest FZF
 rm -rf ${HOME}/.fzf
@@ -35,19 +37,23 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 
 # Install lazygit
+rm -rf v0.44.1.tar.gz lazygit-0.44.1
 wget https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.44.1.tar.gz
 tar -xvf v0.44.1.tar.gz
 cd lazygit-0.44.1
 go install
 
-# Install btop
-wget https://github.com/aristocratos/btop/releases/download/v1.4.0/btop-aarch64-linux-musl.tbz
-tar -xvf btop-aarch64-linux-musl.tbz
-cd btop-aarch64-linux-musl
-sudo make install
+if [[ $(usname) != "Darwin" ]]; then
+	# Install btop
+	rm -rf btop-aarch64-linux-musl.tbz
+	wget https://github.com/aristocratos/btop/releases/download/v1.4.0/btop-aarch64-linux-musl.tbz
+	tar -xvf btop-aarch64-linux-musl.tbz
+	cd btop-aarch64-linux-musl
+	sudo make install
+fi
 
 # Install some more packages
-cargo install --locked tree-sitter-cli eza bat git-delta fd-find
+cargo install --locked tree-sitter-cli eza bat git-delta fd-find zoxide
 npm install -g tldr
 
 # Install starship
