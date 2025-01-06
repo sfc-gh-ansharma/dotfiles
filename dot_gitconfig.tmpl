@@ -1,5 +1,5 @@
 [user]
-  name = Ankur Sharma
+  name = {{ .author | quote }}
   email = {{ .email | quote }}
 [core]
   pager = delta
@@ -43,6 +43,7 @@
   lp = log --patch
   ls = log --pretty=format:"%C(yellow)%h%x09%C(green)%cr%x09%C(reset)%s\\%C(magenta)%d\\ %C(blue)[%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%x09%C(green)%cd%x09%C(reset)%s\\%C(magenta)%d\\ %C(blue)[%cn]" --decorate --numstat
+
   unstage = reset HEAD
   undo-commit = reset --soft HEAD^
 [push]
@@ -50,6 +51,7 @@
 [rere]
   enabled = true
 [color]
-    ui = auto
+  ui = auto
 [pull]
-	rebase = false
+  rebase = false
+
