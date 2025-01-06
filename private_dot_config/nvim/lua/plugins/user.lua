@@ -7,9 +7,6 @@ return {
   -- == Examples of Adding Plugins ==
 
   "github/copilot.vim",
-  {
-    config = function() require("copilot").setup() end,
-  },
 
   "andweeb/presence.nvim",
   {
