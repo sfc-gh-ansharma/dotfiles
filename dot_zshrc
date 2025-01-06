@@ -8,7 +8,7 @@ zstyle ':omz:update' frequency 28
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git fzf aliases brew colored-man-pages history-substring-search macos ssh ssh-agent tmux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git fzf aliases colored-man-pages history-substring-search macos ssh ssh-agent tmux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,8 +48,10 @@ export PATH=$PATH:/usr/local/bin:$HOME/.cargo/bin
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# ---- homebrew ----
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ `uname` == "Darwin" ]]; then
+  # ---- homebrew ----
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # ---- rust ----
 . "$HOME/.cargo/env"
