@@ -1,0 +1,13 @@
+alias n=nvim
+alias v=nvim
+alias c=chezmoi
+alias t=tmux
+alias nvimdiff="nvim -d"
+alias ndiff=nvimdiff
+
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+
+# --- better ls ---
+alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --all --git-ignore"
+alias tree="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --tree --all --git-ignore"
