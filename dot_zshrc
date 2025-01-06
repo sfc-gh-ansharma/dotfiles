@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/usr/local/bin:$HOME/.cargo/bin
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -116,10 +116,10 @@ _fzf_compgen_dir() {
 }
 
 # fzf-git
-# source $HOME/.local/share/chezmoi/fzf-git.sh
+source $HOME/.local/share/chezmoi/fzf-git.sh
 
 # ----- Configure 1Password SSH agent -----
-if [[ uname == "Darwin" ]]; then
+if [[ `uname` == "Darwin" ]]; then
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 fi
 
