@@ -51,6 +51,9 @@ export LANG=en_US.UTF-8
 # ---- homebrew ----
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# ---- rust ----
+. "$HOME/.cargo/env"
+
 # ---- nvm ----
 export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -61,8 +64,8 @@ if [[ -e $HOME/.zsh_alias ]]; then
   source $HOME/.zsh_alias
 fi
 
-if [[ -e $HOME/.zshenv ]]; then
-  source $HOME/.zshenv
+if [[ -e $HOME/.zshlocal ]]; then
+  source $HOME/.zshlocal
 fi
 
 # ---- FZF ----
