@@ -122,9 +122,9 @@ _fzf_compgen_dir() {
 source $HOME/.local/share/chezmoi/fzf-git.sh
 
 # ----- Configure 1Password SSH agent -----
-if [[ `uname` == "Darwin" ]]; then
-  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-fi
+# if [[ `uname` == "Darwin" ]]; then
+#   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+# fi
 
 # ----- Zoxide -----
 eval "$(zoxide init zsh)"
