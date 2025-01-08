@@ -16,7 +16,7 @@ if [[ $(uname) == "Darwin" ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 
-	brew install zsh neovim ripgrep zoxide
+	brew install zsh neovim ripgrep
 fi
 
 # Install latest FZF
