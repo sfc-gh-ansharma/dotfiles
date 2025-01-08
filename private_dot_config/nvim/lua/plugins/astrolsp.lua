@@ -44,8 +44,8 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = {
-        capabilities = { offsetEncoding = "utf-8" },
-        cmd = { "/usr/bin/clangd", "--clang-tidy", "--background-index", "--fallback-style", "-Wall" },
+        capabilities = { offsetEncoding = "utf-16" },
+        cmd = { "clangd", "--clang-tidy", "--background-index", "--fallback-style", "-Wall" },
       },
     },
     -- customize how language servers are attached
