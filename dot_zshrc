@@ -85,6 +85,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias c='clear'
 alias cat=bat
+alias cd=z
 alias cz='chezmoi'
 
 alias la='eza --color=always --icons=always -la'
@@ -175,5 +176,5 @@ export BAT_THEME="Catppuccin Frappe"
 
 # Shell integrations
 eval "$(sf aliases)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 
