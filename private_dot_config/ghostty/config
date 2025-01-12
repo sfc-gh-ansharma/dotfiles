@@ -1,3 +1,4 @@
 theme = catppuccin-frappe
 font-family = Jetbrains Mono
 confirm-close-surface = false
+background-opacity = 0.9

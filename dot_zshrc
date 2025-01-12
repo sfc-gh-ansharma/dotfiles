@@ -34,7 +34,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
-# zinit light zsh-users/zsh-syntax-highlighting
 zinit light catppuccin/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -48,7 +47,6 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::git
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::sudo
-zinit snippet OMZP::tmux
 
 # Load completions
 autoload -Uz compinit && compinit
