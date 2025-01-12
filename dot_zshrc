@@ -12,6 +12,7 @@ fi
 
 # PATH changes
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export XDG_CONFIG_HOME=$HOME/.config
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
