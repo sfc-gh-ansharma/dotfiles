@@ -3,7 +3,6 @@
 INSTALL_HOMEBREW=${INSTALL_HOMEBREW:-0}
 
 HOME_BIN=$HOME/.local/bin
-rm -rf $HOME_BIN
 mkdir -p $HOME_BIN
 
 GO=$(which go)
